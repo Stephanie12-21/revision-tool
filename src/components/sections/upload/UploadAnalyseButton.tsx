@@ -7,7 +7,7 @@ interface UploadButtonProps {
   onUpload: () => void;
 }
 
-export default function UploadButton({
+export default function UploadAnalyseButton({
   file,
   loading,
   onUpload,
