@@ -125,13 +125,7 @@ const QuizPage = () => {
     formData.append("file", file);
 
     try {
-      const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/generatequiz/`,
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+      const { data } = await axios.post("/api/quiz", formData);
 
       if (data.questions) {
         setQuiz(data.questions);

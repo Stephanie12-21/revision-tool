@@ -65,12 +65,7 @@ export default function Analyse() {
       const formData = new FormData();
       formData.append("file", file);
 
-      const res = await axios.post<ApiResult>(
-        `${process.env.NEXT_PUBLIC_API_URL}/analyser/`,
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
-      );
-
+      const res = await axios.post("/api/analyser", formData);
       const payload = res.data ?? {
         resume: "",
         questions: { generales: "", detaillees: "" },
