@@ -29,16 +29,16 @@ const QuizList = ({
 
   return (
     <div className="mt-6 md:mt-10 space-y-4 md:space-y-6">
-      <h2 className="text-xl md:text-2xl font-semibold text-slate-800 text-balance">
+      <h2 className="text-xl md:text-2xl font-semibold text-foreground text-balance">
         Quiz généré :
       </h2>
       <ul className="space-y-4 md:space-y-6">
         {quiz.map((q, i) => (
           <li
             key={i}
-            className="p-3 md:p-4 rounded-xl bg-white shadow border border-amber-100"
+            className="p-3 md:p-4 rounded-xl bg-card shadow border border-border"
           >
-            <p className="font-medium text-slate-900 text-sm md:text-base leading-relaxed text-pretty">
+            <p className="font-medium text-card-foreground text-base md:text-base leading-relaxed text-pretty">
               <span className="font-semibold">Q{i + 1}:</span> {q.question}
             </p>
             <div className="mt-2 md:mt-3 space-y-1.5 md:space-y-2">
@@ -48,13 +48,14 @@ const QuizList = ({
 
                 // Classe pour la correction
                 let labelClass =
-                  "flex items-start gap-2 md:gap-3 cursor-pointer p-2 rounded-lg hover:bg-slate-50 transition-colors";
+                  "flex items-center gap-2 md:gap-3 cursor-pointer p-2 rounded-lg hover:bg-muted/50 transition-colors";
                 if (showCorrection && isSelected) {
                   labelClass += isCorrect
-                    ? " font-semibold text-green-600 bg-green-50"
-                    : " font-semibold text-red-600 line-through bg-red-50";
+                    ? " font-semibold text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/30"
+                    : " font-semibold text-red-700 dark:text-red-400 line-through bg-red-100 dark:bg-red-900/30";
                 } else if (showCorrection && isCorrect) {
-                  labelClass += " font-semibold text-green-600 bg-green-50";
+                  labelClass +=
+                    " font-semibold text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/30";
                 }
 
                 return (
@@ -66,10 +67,10 @@ const QuizList = ({
                         value={r.texte}
                         checked={isSelected}
                         onChange={() => handleSelect(i, r.texte)}
-                        className="accent-amber-500 mt-0.5 flex-shrink-0"
+                        className="accent-primary flex-shrink-0 h-3 w-3 md:h-4 md:w-4 "
                       />
                     )}
-                    <span className="text-sm md:text-base leading-relaxed text-pretty">
+                    <span className="text-base md:text-base leading-relaxed text-pretty">
                       {r.texte}
                     </span>
                   </label>
@@ -77,14 +78,14 @@ const QuizList = ({
               })}
             </div>
             {showCorrection && (
-              <div className="mt-3 md:mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+              <div className="mt-3 md:mt-4 p-3 bg-accent/10 rounded-lg border border-accent/30">
                 {q.reponses.map(
                   (r, idx) =>
                     r.correct &&
                     r.explication && (
                       <p
                         key={idx}
-                        className="font-medium text-yellow-700 text-sm md:text-base leading-relaxed"
+                        className="font-medium text-accent-foreground text-base md:text-base leading-relaxed"
                       >
                         <span className="font-semibold underline">
                           Explication de la réponse
@@ -146,11 +147,11 @@ const QuizPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50/30">
-      <header className="border-b border-amber-200 bg-white/80 backdrop-blur-sm shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-6">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent text-balance">
-            Générateur de quiz
+    <div className="min-h-screen bg-background">
+      <header className="border-b border-border bg-card/80 backdrop-blur-sm shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+            Générateur de Quiz
           </h1>
         </div>
       </header>
@@ -172,8 +173,8 @@ const QuizPage = () => {
         </div>
 
         {error && (
-          <div className="mt-4 md:mt-6 p-3 md:p-4 bg-red-50 border border-red-200 rounded-lg">
-            <p className="text-red-600 font-medium text-center text-sm md:text-base">
+          <div className="mt-4 md:mt-6 p-3 md:p-4 bg-destructive/10 border border-destructive/30 rounded-lg">
+            <p className="text-destructive font-medium text-center text-base md:text-base">
               {error}
             </p>
           </div>
@@ -192,7 +193,7 @@ const QuizPage = () => {
               <div className="flex justify-center mt-6 md:mt-8">
                 <button
                   onClick={handleCheckQuiz}
-                  className="w-full max-w-xs md:w-auto px-6 md:px-8 py-3 md:py-4 bg-amber-500 text-white font-semibold rounded-lg shadow-lg hover:bg-amber-600 hover:shadow-xl transition-all duration-200 text-sm md:text-base"
+                  className="w-full max-w-xs md:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover:shadow-xl transition-all duration-200 text-base md:text-base"
                 >
                   Corriger le quiz
                 </button>

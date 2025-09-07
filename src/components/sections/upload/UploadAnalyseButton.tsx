@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
 interface UploadButtonProps {
@@ -15,11 +16,10 @@ export default function UploadAnalyseButton({
   const disabled = !file || loading;
 
   return (
-    <button
+    <Button
       onClick={onUpload}
       disabled={disabled}
-      className="inline-flex items-center gap-3 px-10 py-4 text-white font-bold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105"
-      style={{ background: "linear-gradient(135deg, #ffe052, #ff933d)" }}
+      className="text-lg px-8 py-6 group shadow-lg hover:shadow-xl transition-all"
     >
       {loading ? (
         <>
@@ -29,6 +29,6 @@ export default function UploadAnalyseButton({
       ) : (
         <>Analyser le document</>
       )}
-    </button>
+    </Button>
   );
 }

@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 
 interface GlobalCardsProps {
   id: string;
-  title: React.ReactNode; // affichage visuel (HTML rendu)
-  rawTitle: string; // version texte brut (pour fullscreen)
+  title: React.ReactNode;
+  rawTitle: string;
   icon: React.ReactNode;
   isOpen: boolean;
   onToggle: (id: string) => void;

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Link from "next/link";
 import { FileText, HelpCircle } from "lucide-react";
 
 import { formatQuestions, formatFicheContent } from "@/lib/formatters";
@@ -140,10 +139,10 @@ export default function Analyse() {
     setFullscreenModal({ isOpen: false, title: "", content: "", icon: null });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50/30">
-      <header className="border-b border-amber-200 bg-white/80 backdrop-blur-sm shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/5">
+      <header className="border-b border-border bg-card/80 backdrop-blur-sm shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
             Analyseur de Documents
           </h1>
         </div>
@@ -166,8 +165,8 @@ export default function Analyse() {
 
         {hasResults && (
           <section className="mt-12">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-8 flex items-center gap-3">
-              <FileText className="h-8 w-8" style={{ color: "#ffe052" }} />
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent mb-8 flex items-center gap-3">
+              <FileText className="h-8 w-8 text-primary" />
               Résultats
             </h2>
 
@@ -176,9 +175,7 @@ export default function Analyse() {
                 id="resume"
                 title="Résumé"
                 rawTitle="Résumé"
-                icon={
-                  <FileText className="h-6 w-6" style={{ color: "#ffe052" }} />
-                }
+                icon={<FileText className="h-6 w-6 text-primary" />}
                 isOpen={expandedCards.resume}
                 onToggle={toggleCard}
                 onFullscreen={openFullscreen}
@@ -188,12 +185,7 @@ export default function Analyse() {
                 id="questionsGenerales"
                 title="Questions Générales"
                 rawTitle="Questions Générales"
-                icon={
-                  <HelpCircle
-                    className="h-6 w-6"
-                    style={{ color: "#ff933d" }}
-                  />
-                }
+                icon={<HelpCircle className="h-6 w-6 text-secondary" />}
                 isOpen={expandedCards.questionsGenerales}
                 onToggle={toggleCard}
                 onFullscreen={openFullscreen}
@@ -204,12 +196,7 @@ export default function Analyse() {
                 id="questionsDetaillees"
                 title="Questions Détaillées"
                 rawTitle="Questions Détaillées"
-                icon={
-                  <HelpCircle
-                    className="h-6 w-6"
-                    style={{ color: "#e85183" }}
-                  />
-                }
+                icon={<HelpCircle className="h-6 w-6 text-accent" />}
                 isOpen={expandedCards.questionsDetaillees}
                 onToggle={toggleCard}
                 onFullscreen={openFullscreen}
@@ -239,18 +226,6 @@ export default function Analyse() {
       </main>
 
       <FullscreenModal {...fullscreenModal} onClose={closeFullscreen} />
-
-      <footer className="mt-16 py-8 bg-gradient-to-r from-yellow-50 to-amber-50 border-t border-amber-200">
-        <div className="text-center text-slate-600">
-          Conçu par{" "}
-          <Link
-            href="https://stephanie-maminiaina.vercel.app/"
-            className="font-semibold text-[#ff933d] hover:underline"
-          >
-            Stéphanie MAMINIAINA
-          </Link>
-        </div>
-      </footer>
     </div>
   );
 }
