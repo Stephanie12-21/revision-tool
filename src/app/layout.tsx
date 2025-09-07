@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Revision Tools",
-  description:
-    "Analysez vos documents et créez des quiz personnalisés avec notre IA éducative avancée.",
+  description: "Analysez vos documents et créez des quiz personnalisés avec notre IA éducative avancée.",
 };
 
 export default function RootLayout({

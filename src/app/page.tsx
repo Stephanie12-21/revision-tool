@@ -135,7 +135,7 @@ export default function HomePage() {
         <div className="container mx-auto">
           <div className="text-center text-muted-foreground">
             <p className="text-base mb-2">
-              &copy; {new Date().getFullYear()} RevisionTools. Tous droits réservés.
+              &copy; {new Date().getFullYear()} RevisionTools.
             </p>
             <p className="text-sm">
               Conçu et développé par{" "}
