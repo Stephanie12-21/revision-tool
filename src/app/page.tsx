@@ -8,13 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  ArrowRight,
-  BookOpen,
-  Brain,
-  FileText,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function HomePage() {
@@ -50,7 +44,6 @@ export default function HomePage() {
               className="text-lg px-8 py-6 group shadow-lg hover:shadow-xl transition-all"
               onClick={handleRedirectToAnalysePage}
             >
-              <FileText className="mr-2 h-5 w-5" />
               Créer des fiches de révision
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -60,7 +53,6 @@ export default function HomePage() {
               className="text-lg px-8 py-6 group bg-background hover:bg-muted/50 transition-all"
               onClick={handleRedirectToQuizPage}
             >
-              <Brain className="mr-2 h-5 w-5" />
               Générer un quiz
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -84,9 +76,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
               <CardHeader className="p-8">
-                <div className="h-14 w-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <FileText className="h-7 w-7 text-primary" />
-                </div>
                 <CardTitle className="text-xl mb-3">
                   Analyse de documents
                 </CardTitle>
@@ -99,9 +88,6 @@ export default function HomePage() {
 
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
               <CardHeader className="p-8">
-                <div className="h-14 w-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
-                  <Brain className="h-7 w-7 text-secondary" />
-                </div>
                 <CardTitle className="text-xl mb-3">
                   Quiz intelligents
                 </CardTitle>
@@ -114,9 +100,6 @@ export default function HomePage() {
 
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
               <CardHeader className="p-8">
-                <div className="h-14 w-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <BookOpen className="h-7 w-7 text-accent" />
-                </div>
                 <CardTitle className="text-xl mb-3">
                   Fiches de révision
                 </CardTitle>
