@@ -38,7 +38,7 @@ export default function HomePage() {
             personnalisés. Notre IA transforme n&apos;importe quel contenu en
             outils d&apos;apprentissage efficaces.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button
               size="lg"
               className="text-lg px-8 py-6 group shadow-lg hover:shadow-xl transition-all"
@@ -73,39 +73,41 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
               <CardHeader className="p-8">
-                <CardTitle className="text-xl mb-3">
+                <CardTitle className="text-xl mb-3 flex items-center justify-between">
                   Analyse de documents
                 </CardTitle>
                 <CardDescription className="text-base leading-relaxed">
                   Importez PDF, Word, PowerPoint et plus. Notre IA extrait
-                  automatiquement les concepts clés.
+                  automatiquement les concepts clés pour créer des résumés
+                  structurés.
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
               <CardHeader className="p-8">
-                <CardTitle className="text-xl mb-3">
+                <CardTitle className="text-xl mb-3 flex items-center justify-between">
                   Quiz intelligents
                 </CardTitle>
                 <CardDescription className="text-base leading-relaxed">
                   Génération automatique de questions adaptées à votre niveau et
-                  à vos objectifs d&apos;apprentissage.
+                  à vos objectifs d&apos;apprentissage avec correction
+                  instantanée.
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
               <CardHeader className="p-8">
-                <CardTitle className="text-xl mb-3">
+                <CardTitle className="text-xl mb-3 flex items-center justify-between">
                   Fiches de révision
                 </CardTitle>
                 <CardDescription className="text-base leading-relaxed">
                   Création automatique de résumés structurés et de fiches mémo
-                  pour une révision efficace.
+                  optimisées pour une révision efficace et mémorable.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -114,7 +116,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t  text-base py-16 px-4 bg-muted/20">
+      <footer className="border-t text-base py-16 px-4 bg-muted/20">
         <div className="container mx-auto">
           <div className="text-center text-muted-foreground">
             <p className="text-base mb-2">
@@ -126,7 +128,7 @@ export default function HomePage() {
                 href="https://stephanie-maminiaina.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary  hover:text-primary/80 font-medium inline-flex items-center gap-1 transition-colors hover:underline"
+                className="text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1 transition-colors hover:underline"
               >
                 Stéphanie MAMINIAINA
                 <ExternalLink className="h-3 w-3" />
